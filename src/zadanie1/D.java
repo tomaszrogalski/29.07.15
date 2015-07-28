@@ -4,11 +4,13 @@ public class D {
 
 	public static void main(String[] args) {
 
-		C nowaKlasaC = new C();
-		nowaKlasaC.getNazwa();
-		
-		B nowaKlasaB = new B();
-		nowaKlasaB.getNazwa();
+		B b = new B();
+		C c = new C();
+		System.out.println(b.getNazwa());
+		System.out.println(c.getNazwa());
+		b.wyswietl();
+		c.wyswietl();
+
 	}
 
 }

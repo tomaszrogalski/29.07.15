@@ -11,4 +11,12 @@ public abstract class A {
 		return nazwa;
 	}
 
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
+	}
+	public void wyswietl()
+	{
+		System.out.println(nazwa);
+	}
+
 }
