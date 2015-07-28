@@ -5,18 +5,19 @@ public abstract class A {
 	private String nazwa;
 
 	public A() {
+		// if (this instanceof C) {
+		// nazwa = "c";
+		// }
+		// if (this instanceof B) {
+		// nazwa = "b";
+		// }
+		nazwa = podajNazwe();
 	}
 
-	protected String getNazwa() {
-		return nazwa;
-	}
-
-	protected void setNazwa(String nazwa) {
-		this.nazwa = nazwa;
-	}
+	protected abstract String podajNazwe();
 
 	public void wyswietl() {
+
 		System.out.println(nazwa);
 	}
-
 }
