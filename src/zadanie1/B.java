@@ -1,14 +1,21 @@
 package zadanie1;
 
-public class B extends A{
+public class B extends A {
 
-	@Override
-	public String getNazwa() {
+	B() {
+		// getNazwa();
 		setNazwa("b");
-		return "b";
+		//super.setNazwa("b");
 	}
-	@Override
-	public void setNazwa(String nazwa) {
-		super.setNazwa(nazwa);
-	}
+
+	// @Override
+	// protected String getNazwa() {
+	// return "b";
+	// }
+
+//	@Override
+//	protected void setNazwa(String nazwa) {
+//		super.setNazwa(nazwa);
+//	}
+
 }

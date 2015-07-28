@@ -7,15 +7,15 @@ public abstract class A {
 	public A() {
 	}
 
-	public String getNazwa() {
+	protected String getNazwa() {
 		return nazwa;
 	}
 
-	public void setNazwa(String nazwa) {
+	protected void setNazwa(String nazwa) {
 		this.nazwa = nazwa;
 	}
-	public void wyswietl()
-	{
+
+	public void wyswietl() {
 		System.out.println(nazwa);
 	}
 

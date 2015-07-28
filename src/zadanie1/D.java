@@ -6,8 +6,6 @@ public class D {
 
 		B b = new B();
 		C c = new C();
-		System.out.println(b.getNazwa());
-		System.out.println(c.getNazwa());
 		b.wyswietl();
 		c.wyswietl();
 
