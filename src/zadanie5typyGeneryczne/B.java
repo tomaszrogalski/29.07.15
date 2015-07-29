@@ -1,40 +1,20 @@
 package zadanie5typyGeneryczne;
 
-public class B<T, S> {
+public class B<T extends A, S extends Number> {
 
-	T obiektT1;
-	T obiektT2;
-	S obiektS1;
+	T zmiennaA;
+	S zmiennaN;
 
-	// Konstruktor wywolany z parametrem dowolnego typu
-	B(T elementTypuT) {
-		this.obiektT1 = elementTypuT;
-	}
+	B(T a, S c) {
 
-	// Konstruktor wywolany z parametrami dowolnego typu ale oba musza byc takie
-	// same
-	B(T elementTypuT, T elementTypuT2) {
-		this.obiektT1 = elementTypuT;
-		this.obiektT2 = elementTypuT2;
-	}
-
-	// Dowolny1, Dowolny2, Dowolny1
-	B(T elementTypuT, S elementTypuS, T elementKlasaT2) {
-		this.obiektT1 = elementTypuT;
-		this.obiektS1 = elementTypuS;
-		this.obiektT2 = elementKlasaT2;
 	}
 
 	public static void main(String[] args) {
 
-		A obiektA = new A();
-		Byte obiektByte = new Byte((byte) 2);
-
-		Integer a = null;
-		Double b = null;
-		Character c = null;
-		new B(obiektA, obiektByte);
-
-		new B(a, b, a);
+		B<A, Number> obiekt1 = new B<A, Number>(new A(), 3);// OK
+		B<A, Number> obiekt2 = new B<A, Number>(3, new A());// NIE OK
+		B<Number, A> obiekt3 = new B<Number, A>(3, new A());// NIE OK
+		B obiekt4 = new B(new A(), 3);// OK
+		B obiekt5 = new B(3, new A());// NIE OK
 	}
 }
