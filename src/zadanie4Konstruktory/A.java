@@ -1,24 +1,28 @@
 package zadanie4Konstruktory;
 
-public class A {
-
-	private int zmienna;
+class A extends B {
 
 	A() {
-		System.out.println("bezparametrowy");
-	}
-
-	A(int argument) {
-		this();
-		System.out.println("1 parametrowy");
-	}
-
-	A(int argument, int argument2) {
-		this(3);
-		System.out.println("2 parametrowy");
+		zmienna1 = 4;
 	}
 
 	public static void main(String[] args) {
-		A obiekt = new A(4, 4);
+
+		B obiekt = new A();
+		System.out.println(zmienna1);
+		System.out.println(zmienna2);
 	}
+
+}
+
+class B {
+	protected static int zmienna1;
+	protected static int zmienna2;
+
+	B() {
+
+		zmienna1 = 3;
+		zmienna2 = 3;
+	}
+
 }
