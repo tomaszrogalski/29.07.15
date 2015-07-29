@@ -5,27 +5,20 @@ public class A {
 	private int zmienna;
 
 	A() {
-		zmienna = 3;
+		System.out.println("bezparametrowy");
 	}
 
 	A(int argument) {
 		this();
-		zmienna = zmienna + argument;
+		System.out.println("1 parametrowy");
+	}
+
+	A(int argument, int argument2) {
+		this(3);
+		System.out.println("2 parametrowy");
 	}
 
 	public static void main(String[] args) {
-		A obiekt = new A(4);
-
-		System.out.println(obiekt.getZmienna());
-
+		A obiekt = new A(4, 4);
 	}
-
-	public int getZmienna() {
-		return zmienna;
-	}
-
-	public void setZmienna(int zmienna) {
-		this.zmienna = zmienna;
-	}
-	
 }
