@@ -1,33 +1,40 @@
 package zadanie5typyGeneryczne;
 
-public class B {
+public class B<T, S> {
+
+	T obiektT1;
+	T obiektT2;
+	S obiektS1;
+
+	// Konstruktor wywolany z parametrem dowolnego typu
+	B(T elementTypuT) {
+		this.obiektT1 = elementTypuT;
+	}
+
+	// Konstruktor wywolany z parametrami dowolnego typu ale oba musza byc takie
+	// same
+	B(T elementTypuT, T elementTypuT2) {
+		this.obiektT1 = elementTypuT;
+		this.obiektT2 = elementTypuT2;
+	}
+
+	// Dowolny1, Dowolny2, Dowolny1
+	B(T elementTypuT, S elementTypuS, T elementKlasaT2) {
+		this.obiektT1 = elementTypuT;
+		this.obiektS1 = elementTypuS;
+		this.obiektT2 = elementKlasaT2;
+	}
 
 	public static void main(String[] args) {
-		String[] tablicaString = { "1", "2", "3" };
-		Integer[] tablicaInt = { 1, 2, 3 };
 
-		B obiekt = new B();
+		A obiektA = new A();
+		Byte obiektByte = new Byte((byte) 2);
 
-		obiekt.metoda(tablicaString); // OK
-		//obiekt.metoda(tablicaInt); // NIE OK
-		obiekt.metodaGeneryczna(tablicaInt); // OK
-		obiekt.metodaGeneryczna(tablicaString); // OK
+		Integer a = null;
+		Double b = null;
+		Character c = null;
+		new B(obiektA, obiektByte);
 
-	}
-
-	// Tylko String
-	public void metoda(String[] tablica) {
-		System.out.println(tablica.getClass() + "\n");
-		for (String element : tablica) {
-			System.out.println(element);
-		}
-	}
-
-	// Rozne typy
-	public <T> void metodaGeneryczna(T[] tablica) { // Obiekty
-		System.out.println(tablica.getClass() + "\n");
-		for (T element : tablica) {
-			System.out.println(element);
-		}
+		new B(a, b, a);
 	}
 }
