@@ -1,21 +1,27 @@
 package zadanie4Konstruktory;
 
-class A extends B {
+class A {
 
-	A() {
-		System.out.println("podklasa");
+	int a;
+	int b;
+	int c;
+
+	public A(int a, int b, int c) {
+		this(b, c);
+		this.c = c;
+	}
+
+	public A(int c) {
+		this.c = c;
+	}
+
+	public A(int b, int c) {
+		this(c);
+		this.b = b;
+
 	}
 
 	public static void main(String[] args) {
-		new A();
 
 	}
-}
-
-class B {
-
-	B() {
-		System.out.println("nadklasa");
-	}
-
 }
